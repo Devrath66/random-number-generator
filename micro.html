@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: #7b1fa2;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #4a148c;
+    }
+
+    #result {
+      margin-top: 25px;
+      font-size: 22px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .icon {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🔢 Random Number Generator</h1>
+    <button class="btn" onclick="generateOTP()"><span class="icon">🔐</span>Generate OTP</button>
+    <button class="btn" onclick="rollDice()"><span class="icon">🎲</span>Roll Dice</button>
+    <button class="btn" onclick="generateRandom()"><span class="icon">🎯</span>Random Number</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function generateOTP() {
+      const otp = Math.floor(100000 + Math.random() * 900000);
+      document.getElementById("result").innerText = "🔐 Your OTP is: " + otp;
+    }
+
+    function rollDice() {
+      const dice = Math.floor(1 + Math.random() * 6);
+      document.getElementById("result").innerText = "🎲 You rolled: " + dice;
+    }
+
+    function generateRandom() {
+      const random = Math.floor(1 + Math.random() * 100000);
+      document.getElementById("result").innerText = "🎯 Random number: " + random;
+    }
+  </script>
+
+</body>
+</html>
